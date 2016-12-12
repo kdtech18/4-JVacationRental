@@ -38,14 +38,13 @@ public class JVacationRental extends JFrame implements ActionListener
 		ButtonGroup beds = new ButtonGroup();
 		ButtonGroup meals = new ButtonGroup();
 		
-		BorderLayout border = new BorderLayout();
 	
 	public JVacationRental()
 		{
 			super("Lambert's Vacation Rentals");
-			mainPnl.setSize(450, 450);
-			mainPnl.setVisible(true);
-			
+			setSize(450, 450);
+			setVisible(true);
+			setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			southPnl.add(totalPrice, BorderLayout.CENTER);
 		
 			location.add(parkSide);
@@ -64,7 +63,7 @@ public class JVacationRental extends JFrame implements ActionListener
 			mainPnl.add(westPnl, BorderLayout.WEST);
 			mainPnl.add(southPnl, BorderLayout.SOUTH);
 			
-			mainPnl.setLayout(border);
+			mainPnl.setLayout(mainLayout);
 			
 			add(mainPnl);
 			
