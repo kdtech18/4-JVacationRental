@@ -23,11 +23,52 @@ public class JVacationRental extends JFrame implements ActionListener
 		
 		BorderLayout mainLayout = new BorderLayout();
 		
+		JButton parkSide = new JButton("Parkside: +$600/w");
+		JButton poolSide = new JButton("Poolside: +$750/w");
+		JButton lakeSide = new JButton("Lakeside: +$825/w");
+		
+		JButton oneBed = new JButton("One Bedroom");
+		JButton twoBed = new JButton("Two Bedroom (+$75)");
+		JButton threeBed = new JButton("Three Bedroom (+$150)");
+		
+		JButton noMeal = new JButton("No Meal Plan");
+		JButton withMeals = new JButton("With Meal Plan (+$200)");
+		
+		ButtonGroup location = new ButtonGroup();
+		ButtonGroup beds = new ButtonGroup();
+		ButtonGroup meals = new ButtonGroup();
+		
+		BorderLayout border = new BorderLayout();
 	
 	public JVacationRental()
 		{
 			super("Lambert's Vacation Rentals");
+			mainPnl.setSize(450, 450);
+			mainPnl.setVisible(true);
 			
+			southPnl.add(totalPrice, BorderLayout.CENTER);
+		
+			location.add(parkSide);
+			location.add(poolSide);
+			location.add(lakeSide);
+			
+			beds.add(oneBed);
+			beds.add(twoBed);
+			beds.add(threeBed);
+			
+			meals.add(noMeal);
+			meals.add(withMeals);
+			
+			mainPnl.add(eastPnl, BorderLayout.EAST);
+			mainPnl.add(centerPnl,  BorderLayout.CENTER);
+			mainPnl.add(westPnl, BorderLayout.WEST);
+			mainPnl.add(southPnl, BorderLayout.SOUTH);
+			
+			mainPnl.setLayout(border);
+			
+			add(mainPnl);
+			
+			validate();
 		}
 	
 	public void actionPerformed(ActionEvent e)
@@ -37,7 +78,8 @@ public class JVacationRental extends JFrame implements ActionListener
 	
 	public static void main(String[] args)
 		{
-		
+			JVacationRental gui = new JVacationRental();
+			
 		}// end main method
 	
 	}
